@@ -44,9 +44,10 @@ function App() {
       <Navbar title='TextUtils' aboutText='About' mode={mode} toggle={toggle} />
       <Alert alert={alert} />
       <div className="container my-3">
+      {/* <TextForm heading='Enter your text below to captilize' mode={mode} showAlert={showAlert} /> */}
       <Routes>
         <Route exact path="/" element={<TextForm heading='Enter your text below to captilize' mode={mode} showAlert={showAlert} />} />
-        <Route exact path="/about" element={<About />} />
+        <Route exact path="/about" element={<About mode={mode}/>} />
       </Routes>
       </div>
     </Router>
