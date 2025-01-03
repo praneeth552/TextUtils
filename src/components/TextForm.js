@@ -83,6 +83,11 @@ export default function TextForm(props) {
         }
     }
 
+    const handleText = () => {
+        setText("");
+        props.showAlert("Text Cleared", "success");
+    }
+
     return (
         <>
             <div className='container' style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
@@ -96,12 +101,13 @@ export default function TextForm(props) {
                 <button disabled = {text.length === 0} className='btn btn-primary mx-1 my-1' onClick={handleInClick}>Convert to inverse case</button>
                 <button disabled = {text.length === 0} className='btn btn-primary mx-1 my-1' onClick={handleCopy}>Copy Text</button>
                 <button disabled = {text.length === 0} className='btn btn-primary mx-1 my-1' onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+                <button disabled = {text.length === 0} className='btn btn-danger mx-1 my-1' onClick={handleText}>Clear Text</button>
             </div>
             <div className="container my-3 " style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h2>Your Text Summary:</h2>
                 {/* <p>{text.length > 0 ? text.split(" ")[text.split(" ").length - 1] === ""? text.split(" ").length - 1: text.split(" ").length : 0} word and {text.length} characters</p> */}
-                <p>{text.split(/ \s+/).filter((element) => {return element.length !== 0}).length} word and {text.length} characters</p>
-                <p>{0.008 * text.split("").filter((element) => {return element.length !== 0}).length} minutes to read the text</p>
+                <p>{text.split(/\s+/).filter((element) => {return element.length !== 0}).length} word and {text.length} characters</p>
+                <p>{0.008 * text.split(" ").filter((element) => {return element.length !== 0}).length} minutes to read the text</p>
                 <h2>Preview</h2>
                 <p>{text.length > 0 ? text : 'No Text has enter to preview!'}</p>
             </div>
