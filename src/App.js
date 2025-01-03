@@ -46,8 +46,8 @@ function App() {
       <div className="container my-3">
       {/* <TextForm heading='Enter your text below to captilize' mode={mode} showAlert={showAlert} /> */}
       <Routes>
-        <Route exact path="/" element={<TextForm heading='Enter your text below to captilize' mode={mode} showAlert={showAlert} />} />
-        <Route exact path="/about" element={<About mode={mode}/>} />
+        <Route exact path="/TextUtils" element={<TextForm heading='Enter your text below to captilize' mode={mode} showAlert={showAlert} />} />
+        <Route exact path="/TextUtils/about" element={<About mode={mode}/>} />
       </Routes>
       </div>
     </Router>
